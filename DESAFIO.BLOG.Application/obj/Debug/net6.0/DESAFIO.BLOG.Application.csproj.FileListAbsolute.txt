@@ -1,0 +1,15 @@
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.AssemblyInfoInputs.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.AssemblyInfo.cs
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.csproj.CoreCompileInputs.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\bin\Debug\net6.0\DESAFIO.BLOG.Application.deps.json
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\bin\Debug\net6.0\DESAFIO.BLOG.Application.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\bin\Debug\net6.0\DESAFIO.BLOG.Application.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\bin\Debug\net6.0\DESAFIO.BLOG.Domain.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\bin\Debug\net6.0\DESAFIO.BLOG.Domain.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.csproj.AssemblyReference.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO..A3954931.Up2Date
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\refint\DESAFIO.BLOG.Application.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\DESAFIO.BLOG.Application.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Application\obj\Debug\net6.0\ref\DESAFIO.BLOG.Application.dll

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Hk239wTiV7TLrg6aQNbLbFhK4ROH0wmJB9F3g8xfNpmaosZbKMPUh0N7UUTkzVXppI2QkV5U4D2cKYr2sZGxAw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Application\\DESAFIO.BLOG.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512"
+  ],
+  "logs": []
+}

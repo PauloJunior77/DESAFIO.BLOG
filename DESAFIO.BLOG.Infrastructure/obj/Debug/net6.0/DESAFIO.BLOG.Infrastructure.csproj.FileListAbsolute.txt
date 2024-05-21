@@ -1,0 +1,15 @@
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.AssemblyInfo.cs
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\bin\Debug\net6.0\DESAFIO.BLOG.Infrastructure.deps.json
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\bin\Debug\net6.0\DESAFIO.BLOG.Infrastructure.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\bin\Debug\net6.0\DESAFIO.BLOG.Infrastructure.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\bin\Debug\net6.0\DESAFIO.BLOG.Domain.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\bin\Debug\net6.0\DESAFIO.BLOG.Domain.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO..283B6F9B.Up2Date
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\refint\DESAFIO.BLOG.Infrastructure.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.pdb
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\ref\DESAFIO.BLOG.Infrastructure.dll

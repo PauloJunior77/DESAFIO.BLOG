@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DESAFIO.BLOG.Application/1.0.0": {
+        "dependencies": {
+          "DESAFIO.BLOG.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DESAFIO.BLOG.Application.dll": {}
+        }
+      },
+      "DESAFIO.BLOG.Domain/1.0.0": {
+        "runtime": {
+          "DESAFIO.BLOG.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DESAFIO.BLOG.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DESAFIO.BLOG.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
