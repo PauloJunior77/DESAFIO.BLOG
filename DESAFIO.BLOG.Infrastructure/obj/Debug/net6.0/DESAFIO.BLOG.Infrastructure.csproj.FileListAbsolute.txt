@@ -13,3 +13,4 @@ C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\n
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\refint\DESAFIO.BLOG.Infrastructure.dll
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.pdb
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\ref\DESAFIO.BLOG.Infrastructure.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Infrastructure\obj\Debug\net6.0\DESAFIO.BLOG.Infrastructure.sourcelink.json

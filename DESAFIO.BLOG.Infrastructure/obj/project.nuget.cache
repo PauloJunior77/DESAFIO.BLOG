@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "pjoNkkgEKXl5Pz8+ZODFX147Aa07CQrGdN6KhdK+gJvaZMCL+8VOd1YXbKPjEd7/fLhBklozvQPbzQZd+NVZFA==",
+  "dgSpecHash": "f/7rCwbL64liz5x0BoUVSRACuze/1/Ip8R2H1BjBrk4CZzDB+RBdmi9kdUyJfkejr+s+tnaSzQLR1fNYqTnjTg==",
   "success": true,
   "projectFilePath": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.30\\microsoft.aspnetcore.cryptography.internal.6.0.30.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.30\\microsoft.aspnetcore.cryptography.keyderivation.6.0.30.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.30\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.30.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.19\\microsoft.entityframeworkcore.7.0.19.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.19\\microsoft.entityframeworkcore.abstractions.7.0.19.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.19\\microsoft.entityframeworkcore.analyzers.7.0.19.nupkg.sha512",
@@ -19,6 +22,8 @@
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0\\microsoft.extensions.fileproviders.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0\\microsoft.extensions.fileproviders.physical.7.0.0.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0\\microsoft.extensions.filesystemglobbing.7.0.0.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.identity.core\\6.0.30\\microsoft.extensions.identity.core.6.0.30.nupkg.sha512",
+    "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.identity.stores\\6.0.30\\microsoft.extensions.identity.stores.6.0.30.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0\\microsoft.extensions.logging.7.0.0.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0\\microsoft.extensions.logging.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\pseaj\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\microsoft.extensions.options.7.0.0.nupkg.sha512",

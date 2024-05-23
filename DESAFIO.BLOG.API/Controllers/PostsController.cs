@@ -1,5 +1,6 @@
 ﻿using DESAFIO.BLOG.Application.Services;
 using DESAFIO.BLOG.Domain.Entities;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,6 +13,7 @@ namespace DESAFIO.BLOG.Presentation.Controllers
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class PostsController : ControllerBase
     {
         private readonly IPostService _postService;

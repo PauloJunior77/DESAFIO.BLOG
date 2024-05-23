@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using DESAFIO.BLOG.Domain.Entities;
 using DESAFIO.BLOG.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace DESAFIO.BLOG.Application.Services
 {
@@ -39,5 +40,29 @@ namespace DESAFIO.BLOG.Application.Services
 
             await _chatMessageRepository.AddAsync(message);
         }
+
+        public async Task<IEnumerable<Guid>> GetChatParticipantsAsync(Guid chatId)
+        {
+            var chatMessages = await GetAllMessagesAsync();
+
+            var participantIds = new HashSet<Guid>();
+            foreach (var message in chatMessages)
+            {
+                participantIds.Add(message.SenderId);
+                participantIds.Add(message.ReceiverId);
+            }
+
+            return participantIds;
+        }
+
+        public async Task<IEnumerable<ChatMessage>> GetMessagesForUserAsync(Guid userId)
+        {
+            var allMessages = await GetAllMessagesAsync();
+
+            return allMessages
+                .Where(m => m.SenderId == userId || m.ReceiverId == userId)
+                .ToList();
+        }
+
     }
 }

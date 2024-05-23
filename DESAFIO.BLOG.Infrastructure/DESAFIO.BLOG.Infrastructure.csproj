@@ -21,4 +21,8 @@
     <ProjectReference Include="..\DESAFIO.BLOG.Domain\DESAFIO.BLOG.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>

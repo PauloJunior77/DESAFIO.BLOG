@@ -1,15 +1,22 @@
 using DESAFIO.BLOG.Application.Services;
+using DESAFIO.BLOG.Domain.Entities;
 using DESAFIO.BLOG.Domain.Repositories;
 using DESAFIO.BLOG.Infrastructure.Data;
 using DESAFIO.BLOG.Infrastructure.Repositories;
 using DESAFIO.BLOG.Presentation.Hubs;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Identity.Web;
 using Microsoft.Identity.Web.Resource;
+using Microsoft.OpenApi.Models;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Microsoft.AspNetCore.Http;
+using System;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,20 +28,26 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
         new MySqlServerVersion(new Version(8, 0, 21))
     ));
 
+builder.Services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddScoped<IPostRepository, PostRepository>();
 builder.Services.AddScoped<IPostService, PostService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
+//builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IChatMessageRepository, ChatMessageRepository>();
 builder.Services.AddScoped<IChatService, ChatService>();
 
-// Add Azure AD B2C authentication
+// Add authentication and authorization
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAdB2C"));
+    .AddJwtBearer(options =>
+    {
+        options.Authority = builder.Configuration["Authority"];
+        options.TokenValidationParameters.ValidateAudience = false;
+    });
 
-// Add authorization policies
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy =>
@@ -58,7 +71,35 @@ builder.Services.AddScoped<UserContext>((serviceProvider) =>
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "DESAFIO.BLOG.API", Version = "v1" });
+
+    // Configuração para suporte de autenticação JWT no Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\""
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+});
 
 var app = builder.Build();
 
@@ -68,24 +109,22 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Define uma rota para a página de login do Azure B2C
+app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapGet("/SignIn", (HttpContext context) =>
 {
     context.Response.Redirect("/MicrosoftIdentity/Account/SignIn");
     return Task.CompletedTask;
 });
 
-// Define uma rota para a página de logout do Azure B2C
 app.MapGet("/SignOut", (HttpContext context) =>
 {
     context.Response.Redirect("/MicrosoftIdentity/Account/SignOut");
     return Task.CompletedTask;
 });
-
-app.UseHttpsRedirection();
-
-app.UseAuthentication();
-app.UseAuthorization();
 
 app.MapControllers();
 app.MapHub<ChatHub>("/chatHub");

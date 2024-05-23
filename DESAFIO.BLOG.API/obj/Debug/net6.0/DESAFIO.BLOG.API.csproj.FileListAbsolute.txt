@@ -101,3 +101,9 @@ C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Micro
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\obj\Debug\net6.0\DESAFIO.BLOG.API.sourcelink.json
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

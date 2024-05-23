@@ -1,11 +1,16 @@
-﻿using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using DESAFIO.BLOG.Application.Services;
-using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Identity;
+using DESAFIO.BLOG.Domain.Entities;
+using DESAFIO.BLOG.API.Models;
+using Microsoft.IdentityModel.Tokens;
+using System;
+using System.IdentityModel.Tokens.Jwt;
+using System.Text;
 
 namespace DESAFIO.BLOG.API.Controllers
 {
@@ -13,72 +18,91 @@ namespace DESAFIO.BLOG.API.Controllers
     [Route("api/[controller]")]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthService _authService;
+        private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly UserManager<ApplicationUser> _userManager;
         private readonly ILogger<AuthController> _logger;
+        private readonly SymmetricSecurityKey _key;
 
-        public AuthController(IAuthService authService, ILogger<AuthController> logger)
+        public AuthController(SignInManager<ApplicationUser> signInManager, UserManager<ApplicationUser> userManager, ILogger<AuthController> logger)
         {
-            _authService = authService;
+            _signInManager = signInManager;
+            _userManager = userManager;
             _logger = logger;
+            // Ensure the key is at least 64 bytes
+            var keyString = "your-secure-key-which-is-at-least-64-bytes-long-12345678901234567890123456789012";
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyString));
         }
 
-        [HttpGet("Login")]
-        public IActionResult Login()
+        [HttpPost("Login")]
+        public async Task<IActionResult> Login(LoginModel model)
         {
-            _logger.LogInformation("Login endpoint called");
-            var properties = new AuthenticationProperties { RedirectUri = "/api/auth/callback" };
-            return Challenge(properties, JwtBearerDefaults.AuthenticationScheme);
-        }
-
-        [HttpGet("Register")]
-        public IActionResult Register()
-        {
-            _logger.LogInformation("Register endpoint called");
-            var properties = new AuthenticationProperties
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
             {
-                RedirectUri = "/api/auth/callback"
-            };
-            properties.Items["policy"] = "B2C_1_SignUpSignIn";
-            return Challenge(properties, JwtBearerDefaults.AuthenticationScheme);
-        }
-
-        [HttpGet("Callback")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public async Task<IActionResult> Callback()
-        {
-            _logger.LogInformation("Callback endpoint called");
-
-            if (!User.Identity.IsAuthenticated)
-            {
-                _logger.LogWarning("User is not authenticated");
-                return Unauthorized("User is not authenticated.");
+                return Unauthorized();
             }
 
-            _logger.LogInformation("User is authenticated, processing registration or update");
+            var result = await _signInManager.CheckPasswordSignInAsync(user, model.Password, lockoutOnFailure: false);
+            if (result.Succeeded)
+            {
+                var token = GenerateJwtToken(user);
+                await _userManager.UpdateAsync(user);
 
-            var user = await _authService.RegisterOrUpdateUserAsync(User);
-            return Ok(user);
+                return Ok(new { token });
+            }
+            else
+            {
+                return Unauthorized();
+            }
+        }
+
+        [HttpPost("Register")]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (result.Succeeded)
+            {
+                _logger.LogInformation("User created a new account with password.");
+                return Ok("User registered successfully.");
+            }
+            else
+            {
+                _logger.LogWarning("Error registering user.");
+                return BadRequest("Error registering user.");
+            }
         }
 
         [HttpPost("Logout")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Logout()
         {
-            _logger.LogInformation("Logout endpoint called");
-
-            await HttpContext.SignOutAsync(JwtBearerDefaults.AuthenticationScheme, new AuthenticationProperties
-            {
-                RedirectUri = Url.Action("LoggedOut")
-            });
-
-            return Ok();
+            await _signInManager.SignOutAsync();
+            _logger.LogInformation("User logged out.");
+            return Ok("User logged out successfully.");
         }
 
-        [HttpGet("LoggedOut")]
-        public IActionResult LoggedOut()
+        private string GenerateJwtToken(ApplicationUser user)
         {
-            _logger.LogInformation("LoggedOut endpoint called");
-            return Ok("You have been logged out.");
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var claims = new[]
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+                new Claim(ClaimTypes.Email, user.Email)
+            };
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddDays(7),
+                SigningCredentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature)
+            };
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            var jwtToken = tokenHandler.WriteToken(token);
+
+            // Atribuir o token JWT ao usuário
+            user.JwtToken = jwtToken;
+
+            return jwtToken;
         }
     }
 }

@@ -1,12 +1,13 @@
-﻿namespace DESAFIO.BLOG.Domain.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace DESAFIO.BLOG.Domain.Entities
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser<Guid>
     {
-        public Guid Id { get; set; }
-        public string AzureB2CId { get; set; }
-        public string Email { get; set; }
         public string Name { get; set; }
+        public string JwtToken { get; set; }
         public ICollection<Post> Posts { get; set; }
-        public ICollection<ChatMessage> ChatMessages { get; set; }
+        public ICollection<ChatMessage> ChatMessagesSent { get; set; } // Mensagens enviadas
+        public ICollection<ChatMessage> ChatMessagesReceived { get; set; } // Mensagens recebidas
     }
 }

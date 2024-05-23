@@ -10,5 +10,7 @@ namespace DESAFIO.BLOG.Domain.Repositories
         Task<IEnumerable<ChatMessage>> GetAllAsync();
         Task<IEnumerable<ChatMessage>> GetMessagesBetweenUsersAsync(string senderId, string receiverId);
         Task AddAsync(ChatMessage message);
+        Task<IEnumerable<Guid>> GetChatParticipantsAsync(Guid chatId);
+        Task<IEnumerable<ChatMessage>> GetMessagesForUserAsync(Guid userId);
     }
 }

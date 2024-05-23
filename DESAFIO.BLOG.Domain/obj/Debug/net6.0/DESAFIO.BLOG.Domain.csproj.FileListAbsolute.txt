@@ -9,3 +9,5 @@ C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\DE
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\refint\DESAFIO.BLOG.Domain.dll
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\DESAFIO.BLOG.Domain.pdb
 C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\ref\DESAFIO.BLOG.Domain.dll
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\DESAFIO.BLOG.Domain.csproj.AssemblyReference.cache
+C:\Users\pseaj\source\repos\DESAFIO.BLOG\DESAFIO.BLOG.Domain\obj\Debug\net6.0\DESAFIO.BLOG.Domain.sourcelink.json
