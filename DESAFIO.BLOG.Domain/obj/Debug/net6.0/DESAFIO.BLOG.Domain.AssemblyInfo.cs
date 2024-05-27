@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DESAFIO.BLOG.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4ea3ca68724ed9df85089cc685c8088fdd083cc2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+781fa0a65b11d4b35b26b080d930e44ac6a7811f")]
 [assembly: System.Reflection.AssemblyProductAttribute("DESAFIO.BLOG.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DESAFIO.BLOG.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

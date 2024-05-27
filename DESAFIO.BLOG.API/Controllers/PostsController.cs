@@ -5,12 +5,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Security.Claims; // Adicione este using
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace DESAFIO.BLOG.Presentation.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
@@ -24,6 +23,7 @@ namespace DESAFIO.BLOG.Presentation.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<ActionResult<IEnumerable<Post>>> GetPosts()
         {
             var posts = await _postService.GetAllPostsAsync();
@@ -31,6 +31,7 @@ namespace DESAFIO.BLOG.Presentation.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<ActionResult<Post>> GetPost(Guid id)
         {
             var post = await _postService.GetPostByIdAsync(id);
@@ -41,16 +42,18 @@ namespace DESAFIO.BLOG.Presentation.Controllers
             return Ok(post);
         }
 
-        [Authorize(Policy = "AdminPolicy")]
         [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<Post>> CreatePost(Post post)
         {
-            await _postService.CreatePostAsync(post, User); // Passar o usuário autenticado (User)
+            // Defina UserId com base no usuário autenticado
+            post.UserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            await _postService.CreatePostAsync(post, User);
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
         }
 
-        [Authorize(Policy = "AdminPolicy")]
         [HttpPut("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> UpdatePost(Guid id, Post post)
         {
             if (id != post.Id)
@@ -58,15 +61,43 @@ namespace DESAFIO.BLOG.Presentation.Controllers
                 return BadRequest();
             }
 
-            await _postService.UpdatePostAsync(post, User); // Passar o usuário autenticado (User)
+            // Verifique se o usuário autenticado é o autor do post ou se é um admin
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+            var isAdminClaim = User.FindFirst("isAdmin");
+            if (userIdClaim == null || isAdminClaim == null)
+            {
+                return Unauthorized(); // Ou outro código de status adequado
+            }
+
+            var userId = Guid.Parse(userIdClaim.Value);
+            if (userId != post.UserId && !bool.Parse(isAdminClaim.Value))
+            {
+                return Forbid(); // Ou Unauthorized(), dependendo do caso
+            }
+
+            await _postService.UpdatePostAsync(post, User);
             return NoContent();
         }
 
-        [Authorize(Policy = "AdminPolicy")]
         [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> DeletePost(Guid id)
         {
-            await _postService.DeletePostAsync(id, User); // Passar o usuário autenticado (User)
+            // Verifique se o usuário autenticado é o autor do post ou se é um admin
+            var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            var post = await _postService.GetPostByIdAsync(id);
+            var isAdminClaim = User.FindFirst("isAdmin");
+            if (post == null || isAdminClaim == null)
+            {
+                return NotFound();
+            }
+
+            if (userId != post.UserId && !bool.Parse(isAdminClaim.Value))
+            {
+                return Forbid(); // Ou Unauthorized(), dependendo do caso
+            }
+
+            await _postService.DeletePostAsync(id, User);
             return NoContent();
         }
     }

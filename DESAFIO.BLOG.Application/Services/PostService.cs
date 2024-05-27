@@ -29,7 +29,7 @@ namespace DESAFIO.BLOG.Application.Services
         public async Task CreatePostAsync(Post post, ClaimsPrincipal user)
         {
             post.Id = Guid.NewGuid();
-            post.CreatedBy = GetCurrentUserId(user);
+            post.UserId = Guid.Parse(GetCurrentUserId(user));
             post.CreatedAt = DateTime.UtcNow;
             await _postRepository.AddAsync(post);
         }
@@ -40,14 +40,14 @@ namespace DESAFIO.BLOG.Application.Services
 
             if (existingPost == null)
             {
-                throw new KeyNotFoundException("Post not found");
+                throw new KeyNotFoundException("Postagem não encontrada");
             }
 
-            var userId = GetCurrentUserId(user);
+            var userId = Guid.Parse(GetCurrentUserId(user));
 
-            if (existingPost.CreatedBy != userId && !IsUserAdmin(user))
+            if (existingPost.UserId != userId && !IsUserAdmin(user))
             {
-                throw new UnauthorizedAccessException("You are not authorized to edit this post");
+                throw new UnauthorizedAccessException("Você não está autorizado a editar esta postagem");
             }
 
             existingPost.Title = post.Title;
@@ -63,22 +63,22 @@ namespace DESAFIO.BLOG.Application.Services
 
             if (post == null)
             {
-                throw new KeyNotFoundException("Post not found");
+                throw new KeyNotFoundException("Postagem não encontrada");
             }
 
-            var userId = GetCurrentUserId(user);
+            var userId = Guid.Parse(GetCurrentUserId(user));
 
-            if (post.CreatedBy != userId && !IsUserAdmin(user))
+            if (post.UserId != userId && !IsUserAdmin(user))
             {
-                throw new UnauthorizedAccessException("You are not authorized to delete this post");
+                throw new UnauthorizedAccessException("\r\nVocê não está autorizado a excluir esta postagem");
             }
 
-            await _postRepository.DeleteAsync(post.Id);
+            await _postRepository.DeleteAsync(id);
         }
 
         private string GetCurrentUserId(ClaimsPrincipal user)
         {
-            return user?.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            return user?.FindFirstValue(ClaimTypes.NameIdentifier);
         }
 
         private bool IsUserAdmin(ClaimsPrincipal user)

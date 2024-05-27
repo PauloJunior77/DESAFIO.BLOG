@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DESAFIO.BLOG.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240523150405_InitialCreate")]
+    [Migration("20240523200226_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -39,6 +39,9 @@ namespace DESAFIO.BLOG.Infrastructure.Migrations
                         .HasColumnType("varchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsAdmin")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("JwtToken")
@@ -90,6 +93,76 @@ namespace DESAFIO.BLOG.Infrastructure.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("05b7718b-bbf4-4b16-8d99-01b65a2c3978"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "933fc52d-650c-49f1-a642-17da29616040",
+                            Email = "admin@example.com",
+                            EmailConfirmed = true,
+                            IsAdmin = true,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@EXAMPLE.COM",
+                            NormalizedUserName = "ADMIN@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEOAOGiTm/3EkSeTm/VSwrbXAVz25PKKZ7TxA27CX+ko8HISGqVwEaZ7zzMTspnJfgw==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "admin@example.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("c0067768-fe8b-4f7d-a80b-ed78f8b3a194"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "6a1b9c9d-21e1-4e6d-a015-377d8f098b0e",
+                            Email = "user1@example.com",
+                            EmailConfirmed = true,
+                            IsAdmin = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER1@EXAMPLE.COM",
+                            NormalizedUserName = "USER1@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEH137Vpvn2Bezc2uu6dP5C4Za67lMoamdBZPLHeOUgaRIktAUcUoASfzs50r9pNsiA==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "user1@example.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("a28710bf-f003-4568-9e8d-b8f49bedf9b0"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "a0a5e271-d57e-4318-9dd4-b68df34f263c",
+                            Email = "user2@example.com",
+                            EmailConfirmed = true,
+                            IsAdmin = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER2@EXAMPLE.COM",
+                            NormalizedUserName = "USER2@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIhabaFtKf4ClmHtfadr9zp3rbrtIi3nOYyPeGUJTXNfgfeBJc3NiMPtANJReiq0dQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "user2@example.com"
+                        },
+                        new
+                        {
+                            Id = new Guid("367022c7-ff0a-42c5-bbe2-d9fd13e63226"),
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "75079feb-920e-460e-8532-30b261261ffb",
+                            Email = "user3@example.com",
+                            EmailConfirmed = true,
+                            IsAdmin = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER3@EXAMPLE.COM",
+                            NormalizedUserName = "USER3@EXAMPLE.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFmwYVkw2K9jiKbT6C7kXAVRmMFuyhvljr+olWi6imJl9t7gieW24+/ecCd9cfl6YQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "",
+                            TwoFactorEnabled = false,
+                            UserName = "user3@example.com"
+                        });
                 });
 
             modelBuilder.Entity("DESAFIO.BLOG.Domain.Entities.Chat", b =>
@@ -162,7 +235,7 @@ namespace DESAFIO.BLOG.Infrastructure.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<Guid?>("UserId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
@@ -170,6 +243,35 @@ namespace DESAFIO.BLOG.Infrastructure.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Posts");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("333f0aa1-4f27-4177-b060-56daed84edc9"),
+                            Content = "This is the first post content",
+                            CreatedAt = new DateTime(2024, 5, 23, 20, 2, 26, 446, DateTimeKind.Utc).AddTicks(9040),
+                            CreatedBy = "user1@example.com",
+                            Title = "First Post",
+                            UserId = new Guid("c0067768-fe8b-4f7d-a80b-ed78f8b3a194")
+                        },
+                        new
+                        {
+                            Id = new Guid("21cfb7dc-54d1-4c9f-8db9-6d5dda17cd5e"),
+                            Content = "This is the second post content",
+                            CreatedAt = new DateTime(2024, 5, 23, 20, 2, 26, 446, DateTimeKind.Utc).AddTicks(9051),
+                            CreatedBy = "user2@example.com",
+                            Title = "Second Post",
+                            UserId = new Guid("a28710bf-f003-4568-9e8d-b8f49bedf9b0")
+                        },
+                        new
+                        {
+                            Id = new Guid("51c0cf49-0056-4873-b5ee-03a00ed097d9"),
+                            Content = "This is the third post content",
+                            CreatedAt = new DateTime(2024, 5, 23, 20, 2, 26, 446, DateTimeKind.Utc).AddTicks(9054),
+                            CreatedBy = "user3@example.com",
+                            Title = "Third Post",
+                            UserId = new Guid("367022c7-ff0a-42c5-bbe2-d9fd13e63226")
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<System.Guid>", b =>
@@ -329,7 +431,9 @@ namespace DESAFIO.BLOG.Infrastructure.Migrations
                 {
                     b.HasOne("DESAFIO.BLOG.Domain.Entities.ApplicationUser", "User")
                         .WithMany("Posts")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

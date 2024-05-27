@@ -6,6 +6,7 @@ namespace DESAFIO.BLOG.Domain.Entities
     {
         public string Name { get; set; }
         public string JwtToken { get; set; }
+        public bool IsAdmin { get; set; }
         public ICollection<Post> Posts { get; set; }
         public ICollection<ChatMessage> ChatMessagesSent { get; set; } // Mensagens enviadas
         public ICollection<ChatMessage> ChatMessagesReceived { get; set; } // Mensagens recebidas

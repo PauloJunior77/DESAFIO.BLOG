@@ -39,21 +39,18 @@ namespace DESAFIO.BLOG.Infrastructure.Repositories
 
         public async Task<IEnumerable<Guid>> GetChatParticipantsAsync(Guid chatId)
         {
-            // Buscar todos os IDs de remetentes únicos para mensagens com o chatId especificado
             var senderIds = await _dbContext.ChatMessages
                 .Where(m => m.ChatId == chatId)
                 .Select(m => m.SenderId)
                 .Distinct()
                 .ToListAsync();
 
-            // Buscar todos os IDs de destinatários únicos para mensagens com o chatId especificado
             var receiverIds = await _dbContext.ChatMessages
                 .Where(m => m.ChatId == chatId)
                 .Select(m => m.ReceiverId)
                 .Distinct()
                 .ToListAsync();
 
-            // Combinar IDs de remetentes e destinatários para obter todos os participantes únicos
             var participantIds = senderIds.Union(receiverIds);
 
             return participantIds;

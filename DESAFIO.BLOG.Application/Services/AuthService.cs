@@ -34,7 +34,7 @@ namespace DESAFIO.BLOG.Application.Services
                 if (result.Succeeded)
                     return newUser;
                 else
-                    return null; // or throw exception
+                    return null;
             }
             else
             {

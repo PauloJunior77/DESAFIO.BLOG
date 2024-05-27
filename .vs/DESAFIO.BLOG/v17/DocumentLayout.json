@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|solutionrelative:desafio.blog.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.api\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|solutionrelative:desafio.blog.api\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.api\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|solutionrelative:desafio.blog.api\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,28 +11,24 @@
       "RelativeMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|solutionrelative:desafio.blog.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|solutionrelative:desafio.blog.infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.infrastructure\\repositories\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|solutionrelative:desafio.blog.infrastructure\\repositories\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C248D7AA-E7BD-4985-97E0-EE64DEDBC0EA}|DESAFIO.BLOG.Domain\\DESAFIO.BLOG.Domain.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.domain\\repositories\\ichatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C248D7AA-E7BD-4985-97E0-EE64DEDBC0EA}|DESAFIO.BLOG.Domain\\DESAFIO.BLOG.Domain.csproj|solutionrelative:desafio.blog.domain\\repositories\\ichatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{441FF826-3B8F-4240-B490-99693B29FCA6}|DESAFIO.BLOG.API\\DESAFIO.BLOG.API.csproj|solutionrelative:desafio.blog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|solutionrelative:desafio.blog.infrastructure\\repositories\\postrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C248D7AA-E7BD-4985-97E0-EE64DEDBC0EA}|DESAFIO.BLOG.Domain\\DESAFIO.BLOG.Domain.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.domain\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C248D7AA-E7BD-4985-97E0-EE64DEDBC0EA}|DESAFIO.BLOG.Domain\\DESAFIO.BLOG.Domain.csproj|solutionrelative:desafio.blog.domain\\entities\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.infrastructure\\repositories\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|solutionrelative:desafio.blog.infrastructure\\repositories\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9949C54D-2050-452E-956D-ECE0B88DC0E7}|DESAFIO.BLOG.Application\\DESAFIO.BLOG.Application.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9949C54D-2050-452E-956D-ECE0B88DC0E7}|DESAFIO.BLOG.Application\\DESAFIO.BLOG.Application.csproj|solutionrelative:desafio.blog.application\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8683FCA-FF96-4F1B-BA48-0B551BDBC54B}|DESAFIO.BLOG.Infrastructure\\DESAFIO.BLOG.Infrastructure.csproj|solutionrelative:desafio.blog.infrastructure\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9949C54D-2050-452E-956D-ECE0B88DC0E7}|DESAFIO.BLOG.Application\\DESAFIO.BLOG.Application.csproj|c:\\users\\pseaj\\source\\repos\\desafio.blog\\desafio.blog.application\\services\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9949C54D-2050-452E-956D-ECE0B88DC0E7}|DESAFIO.BLOG.Application\\DESAFIO.BLOG.Application.csproj|solutionrelative:desafio.blog.application\\services\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedHeight": 251,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -78,132 +66,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PostsController.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\PostsController.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.API\\Controllers\\PostsController.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\PostsController.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.API\\Controllers\\PostsController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T03:35:18.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "DESAFIO.BLOG.API\\Controllers\\ChatController.cs",
               "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\ChatController.cs",
               "RelativeToolTip": "DESAFIO.BLOG.API\\Controllers\\ChatController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABPAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T19:28:03.678Z",
+              "WhenOpened": "2024-05-27T11:10:58.808Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Domain\\Entities\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.Domain\\Entities\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Domain\\Entities\\ApplicationUser.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.Domain\\Entities\\ApplicationUser.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T02:55:56.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "DESAFIO.BLOG.API\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Controllers\\AuthController.cs",
               "RelativeToolTip": "DESAFIO.BLOG.API\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAAAGwAAAAAAAAA",
+              "ViewState": "AQIAAEoAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T02:55:28.425Z",
+              "WhenOpened": "2024-05-27T11:10:47.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Program.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.API\\Program.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\Program.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.API\\Program.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAgwFAAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T02:53:01.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IChatMessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Domain\\Repositories\\IChatMessageRepository.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.Domain\\Repositories\\IChatMessageRepository.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Domain\\Repositories\\IChatMessageRepository.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.Domain\\Repositories\\IChatMessageRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T04:14:22.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ChatMessageRepository.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T03:31:36.734Z",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\appsettings.json",
+              "RelativeDocumentMoniker": "DESAFIO.BLOG.API\\appsettings.json",
+              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.API\\appsettings.json",
+              "RelativeToolTip": "DESAFIO.BLOG.API\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-27T11:10:34.419Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAFAAAA",
+              "Title": "ChatMessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
+              "RelativeDocumentMoniker": "DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
+              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
+              "RelativeToolTip": "DESAFIO.BLOG.Infrastructure\\Repositories\\ChatMessageRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADoAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T04:28:40.989Z",
+              "WhenOpened": "2024-05-27T11:09:56.587Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "DESAFIO.BLOG.Infrastructure\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "DESAFIO.BLOG.Infrastructure\\Repositories\\UserRepository.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T11:09:50.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PostRepository.cs",
               "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\PostRepository.cs",
               "RelativeDocumentMoniker": "DESAFIO.BLOG.Infrastructure\\Repositories\\PostRepository.cs",
               "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Infrastructure\\Repositories\\PostRepository.cs",
               "RelativeToolTip": "DESAFIO.BLOG.Infrastructure\\Repositories\\PostRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAyAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-23T04:18:28.038Z",
+              "WhenOpened": "2024-05-27T11:09:19.982Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Application\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "DESAFIO.BLOG.Application\\Services\\AuthService.cs",
-              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Application\\Services\\AuthService.cs",
-              "RelativeToolTip": "DESAFIO.BLOG.Application\\Services\\AuthService.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAADEAAAAAAAAA",
+              "DocumentIndex": 6,
+              "Title": "UserContext.cs",
+              "DocumentMoniker": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Application\\Services\\UserContext.cs",
+              "RelativeDocumentMoniker": "DESAFIO.BLOG.Application\\Services\\UserContext.cs",
+              "ToolTip": "C:\\Users\\pseaj\\source\\repos\\DESAFIO.BLOG\\DESAFIO.BLOG.Application\\Services\\UserContext.cs",
+              "RelativeToolTip": "DESAFIO.BLOG.Application\\Services\\UserContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-21T19:13:47.148Z",
+              "WhenOpened": "2024-05-27T11:09:13.908Z",
               "EditorCaption": ""
             }
           ]

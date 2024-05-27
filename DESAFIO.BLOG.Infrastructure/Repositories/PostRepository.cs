@@ -5,26 +5,35 @@ using DESAFIO.BLOG.Domain.Entities;
 using DESAFIO.BLOG.Domain.Repositories;
 using DESAFIO.BLOG.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DESAFIO.BLOG.Infrastructure.Repositories
 {
     public class PostRepository : IPostRepository
     {
         private readonly ApplicationDbContext _dbContext;
+        private readonly JsonSerializerOptions _jsonOptions;
 
         public PostRepository(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
+            _jsonOptions = new JsonSerializerOptions
+            {
+                ReferenceHandler = ReferenceHandler.Preserve,
+            };
         }
 
         public async Task<IEnumerable<Post>> GetAllAsync()
         {
-            return await _dbContext.Posts.ToListAsync();
+            var posts = await _dbContext.Posts.Include(p => p.User).ToListAsync();
+            return JsonSerializer.Deserialize<IEnumerable<Post>>(JsonSerializer.Serialize(posts, _jsonOptions), _jsonOptions);
         }
 
         public async Task<Post> GetByIdAsync(Guid id)
         {
-            return await _dbContext.Posts.FirstOrDefaultAsync(p => p.Id == id);
+            var post = await _dbContext.Posts.Include(p => p.User).FirstOrDefaultAsync(p => p.Id == id);
+            return JsonSerializer.Deserialize<Post>(JsonSerializer.Serialize(post, _jsonOptions), _jsonOptions);
         }
 
         public async Task AddAsync(Post post)

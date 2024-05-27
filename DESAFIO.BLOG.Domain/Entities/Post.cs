@@ -10,6 +10,7 @@ namespace DESAFIO.BLOG.Domain.Entities
         public DateTime CreatedAt { get; set; }
         public string CreatedBy { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public Guid UserId { get; set; }
         public ApplicationUser User { get; set; }
     }
 }

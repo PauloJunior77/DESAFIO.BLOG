@@ -11,6 +11,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
+using System.Collections.Generic;
 
 namespace DESAFIO.BLOG.API.Controllers
 {
@@ -46,9 +47,10 @@ namespace DESAFIO.BLOG.API.Controllers
             if (result.Succeeded)
             {
                 var token = GenerateJwtToken(user);
+                user.JwtToken = token;
                 await _userManager.UpdateAsync(user);
 
-                return Ok(new { token });
+                return Ok(new { token, user });
             }
             else
             {
@@ -63,6 +65,11 @@ namespace DESAFIO.BLOG.API.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
+                if (model.IsAdmin)
+                {
+                    await _userManager.AddToRoleAsync(user, "Admin");
+                }
+
                 _logger.LogInformation("User created a new account with password.");
                 return Ok("User registered successfully.");
             }
@@ -74,35 +81,85 @@ namespace DESAFIO.BLOG.API.Controllers
         }
 
         [HttpPost("Logout")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
-            _logger.LogInformation("User logged out.");
-            return Ok("User logged out successfully.");
+            return Ok(new { message = "User logged out successfully." });
         }
 
         private string GenerateJwtToken(ApplicationUser user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var claims = new[]
+            var key = Encoding.ASCII.GetBytes("your-secure-key-which-is-at-least-64-bytes-long-12345678901234567890123456789012");
+
+            var claims = new List<Claim>
+    {
+        new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+        new Claim(ClaimTypes.Email, user.Email)
+    };
+
+            var userRoles = _userManager.GetRolesAsync(user).Result;
+            if (userRoles != null)
             {
-                new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
-                new Claim(ClaimTypes.Email, user.Email)
-            };
+                foreach (var role in userRoles)
+                {
+                    claims.Add(new Claim(ClaimTypes.Role, role));
+                }
+            }
+
+            if (user.IsAdmin)
+            {
+                claims.Add(new Claim(ClaimTypes.Role, "Admin"));
+                _userManager.AddToRoleAsync(user, "Admin").Wait();
+            }
+
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddDays(7),
-                SigningCredentials = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature)
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha512Signature)
             };
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
-            var jwtToken = tokenHandler.WriteToken(token);
-
-            // Atribuir o token JWT ao usuário
-            user.JwtToken = jwtToken;
-
-            return jwtToken;
+            return tokenHandler.WriteToken(token);
         }
+
+        [HttpGet("VerifyToken")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public async Task<IActionResult> VerifyToken()
+        {
+            try
+            {
+                var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                if (string.IsNullOrEmpty(userId))
+                {
+                    _logger.LogWarning("User ID not found in token.");
+                    return Unauthorized();
+                }
+
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user == null)
+                {
+                    _logger.LogWarning($"User not found: {userId}");
+                    return Unauthorized();
+                }
+
+                var userClaims = new
+                {
+                    Id = user.Id,
+                    Email = user.Email,
+                    UserName = user.UserName,
+                    IsAdmin = await _userManager.IsInRoleAsync(user, "Admin")
+                };
+
+                return Ok(userClaims);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error verifying token.");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
     }
 }

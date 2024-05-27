@@ -1,0 +1,22 @@
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ post.title }}
+      </mat-panel-title>
+      <mat-panel-description>
+        Publicado em: {{ post.createdAt | date }}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>{{ post.content }}</p>
+    <div class="post-footer">
+      <p class="post-author">Autor: {{ post.user.email }}</p>
+      <button mat-icon-button *ngIf="isAdmin || (currentUser && currentUser.id === post.userId)" (click)="editPost(post.id)" class="edit-button">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button *ngIf="isAdmin || (currentUser && currentUser.id === post.userId)" (click)="deletePost(post.id)" class="delete-button">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
