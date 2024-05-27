@@ -46,7 +46,6 @@ namespace DESAFIO.BLOG.Presentation.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<Post>> CreatePost(Post post)
         {
-            // Defina UserId com base no usuário autenticado
             post.UserId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             await _postService.CreatePostAsync(post, User);
             return CreatedAtAction(nameof(GetPost), new { id = post.Id }, post);
@@ -61,18 +60,17 @@ namespace DESAFIO.BLOG.Presentation.Controllers
                 return BadRequest();
             }
 
-            // Verifique se o usuário autenticado é o autor do post ou se é um admin
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
             var isAdminClaim = User.FindFirst("isAdmin");
             if (userIdClaim == null || isAdminClaim == null)
             {
-                return Unauthorized(); // Ou outro código de status adequado
+                return Unauthorized();
             }
 
             var userId = Guid.Parse(userIdClaim.Value);
             if (userId != post.UserId && !bool.Parse(isAdminClaim.Value))
             {
-                return Forbid(); // Ou Unauthorized(), dependendo do caso
+                return Forbid();
             }
 
             await _postService.UpdatePostAsync(post, User);
@@ -83,7 +81,6 @@ namespace DESAFIO.BLOG.Presentation.Controllers
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<IActionResult> DeletePost(Guid id)
         {
-            // Verifique se o usuário autenticado é o autor do post ou se é um admin
             var userId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value);
             var post = await _postService.GetPostByIdAsync(id);
             var isAdminClaim = User.FindFirst("isAdmin");
@@ -94,7 +91,7 @@ namespace DESAFIO.BLOG.Presentation.Controllers
 
             if (userId != post.UserId && !bool.Parse(isAdminClaim.Value))
             {
-                return Forbid(); // Ou Unauthorized(), dependendo do caso
+                return Forbid();
             }
 
             await _postService.DeletePostAsync(id, User);
